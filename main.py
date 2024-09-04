@@ -81,9 +81,9 @@ class ListManager():
         with open("output/" + filepath, "w") as f:
             f.write("\n".join(domains))
     
-    def save(self):
+    def save(self, chunkSize=1000):
         self.saveList(sorted(self.all), "all.txt")
-        self.genChunks(1000)
+        self.genChunks(chunkSize)
 
 if __name__ == "__main__":
     manager = ListManager()
