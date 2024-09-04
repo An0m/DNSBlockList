@@ -1,14 +1,13 @@
 from requests import get
 from os import makedirs
 import re
-from urllib.request import urlopen
 
 def chunkArray(xs, n):
     n = max(1, n)
     return (xs[i:i+n] for i in range(0, len(xs), n))
 
 class ListManager():
-    def __init__(self, chunkSize:int) -> None:
+    def __init__(self) -> None:
         self.all:set[set] = set()
         self.DOMAIN_REGEX = re.compile(r"((?=[a-z0-9-]{1,63}\.)(xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,63}")
         self.load()
@@ -83,8 +82,8 @@ class ListManager():
             f.write("\n".join(domains))
     
     def save(self):
-        self.saveList(self.all, "all.txt")
-        self.genChunks()
+        self.saveList(sorted(self.all), "all.txt")
+        self.genChunks(1000)
 
 if __name__ == "__main__":
     manager = ListManager()
