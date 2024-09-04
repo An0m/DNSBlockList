@@ -74,13 +74,13 @@ class ListManager():
 
     def genChunks(self, chunkSize:int):
         makedirs("output/chunks", exist_ok=True)
-        for i, chunk in enumerate(chunkArray(list(self.all), chunkSize)):
+        for i, chunk in enumerate(chunkArray(sorted(self.all), chunkSize)):
             self.saveList(chunk, f"chunks/{i}.csv")
     
     def saveList(self, domains:set[str], filepath="all.txt"):
         makedirs("output", exist_ok=True)
         with open("output/" + filepath, "w") as f:
-            f.write("\n".join(sorted(domains)))
+            f.write("\n".join(domains))
     
     def save(self):
         self.saveList(self.all, "all.txt")
