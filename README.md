@@ -18,4 +18,12 @@ The script ignores any list starting with "!" and "#"s, and runs a regex match t
 
 Wild cards are not supported, as the script just defaults to the parent domain (Cloudflare rules, not mine)
 
-Same thing, if a parent domain is inside the list, any subdomains will be skipped
+---
+
+<strike> If a parent domain is inside the list, any subdomains will be skipped. </strike>
+
+After around 3 hours of trying to implement a check to remove subdomains of second level domains in the list in python, but getting poor performances (days of estimated time :D), i finally decided to "just do it in golang", and with some binary search trickery.
+
+It completed. In 184ms. Not gonna implement it in Python :D
+
+I'll leave the file inside of the repo, just because, but still... man. Algorithms

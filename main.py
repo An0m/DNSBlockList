@@ -88,4 +88,3 @@ class ListManager():
 if __name__ == "__main__":
     manager = ListManager()
     manager.save()
-    
