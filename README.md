@@ -24,6 +24,8 @@ Wild cards are not supported, as the script just defaults to the parent domain (
 
 After around 3 hours of trying to implement a check to remove subdomains of second level domains in the list in python, but getting poor performances (days of estimated time :D), i finally decided to "just do it in golang", and with some binary search trickery.
 
-It completed. In 184ms. Not gonna implement it in Python :D
+It completed. In nearly 300ms. Not gonna implement it in Python :D
 
-I'll leave the file inside of the repo, just because, but still... man. Algorithms
+Man. Algorithms.
+
+It's like an 8% improvement. Which doesn't seem like much but it's around 70k lines
