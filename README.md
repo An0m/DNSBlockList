@@ -20,12 +20,8 @@ Wild cards are not supported, as the script just defaults to the parent domain (
 
 ---
 
-<strike> If a parent domain is inside the list, any subdomains will be skipped. </strike>
+If a second level domain is inside the list, any subdomains will be skipped.
 
-After around 3 hours of trying to implement a check to remove subdomains of second level domains in the list in python, but getting poor performances (days of estimated time :D), i finally decided to "just do it in golang", and with some binary search trickery.
+You can also add any domain to suffix.txt to exclude any subdomains from the final list
+(you cannot exclude subdomains OF subdomains in any other way)
 
-It completed. In nearly 300ms. Not gonna implement it in Python :D
-
-Man. Algorithms.
-
-It's like an 8% improvement. Which doesn't seem like much but it's around 70k lines

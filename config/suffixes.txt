@@ -1,0 +1,5 @@
+agent.datadoghq.com
+fp.measure.office.com
+collect.igodigital.com
+marketingcloudqaapis.com
+marketingcloudqaops.com
